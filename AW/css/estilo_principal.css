@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "MiFuente";
+  src: url("../fonts/Hal.ttf");
+}
+
+h1 {
+  font-family: "MiFuente";
+  letter-spacing: 3px;
+  font-size: 5em;
+}
+
+table, th, td {
+  border: 1px solid orange;
+}

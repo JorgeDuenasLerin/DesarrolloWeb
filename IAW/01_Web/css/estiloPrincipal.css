@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  background-color: #FF5733;
+  color: white;
+  font-size: 4em;
+  padding: 2em;
+  margin: 0;
+}
