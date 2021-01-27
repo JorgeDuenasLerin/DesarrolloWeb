@@ -12,9 +12,18 @@ def index(request):
     1º Saca esta información como si fuera una lista HTML (ol-li)
     2º Saca de cada pregunta sus opciones
     """
-    html = "Hola mundo del desarrollo django.<br>"
+    html = "<h1>Hola mundo del desarrollo django.</h1>"
+    html = html + "<ol>"
     for p in preguntas:
-        html = html + p.question_text + "<br>"
+        html = html + "<li>"
+        html = html + p.question_text
+        ## Quiero recorrer las opciones
+        for o in p.choice_set.all():
+            html = html + "<ul>"
+            html = html + "<li>" + o.choice_text + "</li>"
+            html = html + "</ul>"
+        html = html + "</li>"
+    html = html + "</ol>"
     return HttpResponse(html)
 
 
