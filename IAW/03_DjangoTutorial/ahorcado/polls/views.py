@@ -2,32 +2,31 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse
-from .models import Question
+from .models import Question, Youtuber
 
 
 def index(request):
-    preguntas = Question.objects.all()
-    """
-    Tarea/Reto
-    1º Saca esta información como si fuera una lista HTML (ol-li)
-    2º Saca de cada pregunta sus opciones
-    """
-    html = "<h1>Hola mundo del desarrollo django.</h1>"
-    html = html + "<ol>"
-    for p in preguntas:
-        html = html + "<li>"
-        html = html + p.question_text
-        ## Quiero recorrer las opciones
-        for o in p.choice_set.all():
-            html = html + "<ul>"
-            html = html + "<li>" + o.choice_text + "</li>"
-            html = html + "</ul>"
-        html = html + "</li>"
-    html = html + "</ol>"
-    return HttpResponse(html)
+    latest_question_list = Question.objects.all()
+    context = {
+        'listado_preguntas': latest_question_list,
+        'titulo': 'Esta información va al template'
+    }
+    return render(request, 'polls/index.html', context)
+
+
+def listado_youtubers(request):
+    listado = Youtuber.objects.all()
+    contexto = {
+        'listado_youtubers': listado
+    }
+    return render(request, 'polls/listado_youtuber.html', contexto)
 
 
 def detail(request, question_id):
+    # Obterner la pregunta con id question_id a través de los modelos
+    # Generar un contexto
+    # generar un polls/detail.html
+    # return -> return render
     return HttpResponse("Este es el detalle de la pregunta con id: %s." % question_id)
 
 def results(request, question_id):

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Listado de youtubers</h1>
+    <ul>
+      {% for youtuber in listado_youtubers %}
+        <li>{{youtuber.nombre}} - {{youtuber.pasta}}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
