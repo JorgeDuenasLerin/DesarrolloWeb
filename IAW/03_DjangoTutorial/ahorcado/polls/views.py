@@ -24,10 +24,15 @@ def listado_youtubers(request):
 
 def detail(request, question_id):
     # Obterner la pregunta con id question_id a través de los modelos
+    dondeGuardarElObjeto = Question.objects.get(pk=question_id)
     # Generar un contexto
     # generar un polls/detail.html
     # return -> return render
-    return HttpResponse("Este es el detalle de la pregunta con id: %s." % question_id)
+    context = {
+        'pregunta': dondeGuardarElObjeto
+    }
+    return render(request, 'polls/detalle.html', context)
+
 
 def results(request, question_id):
     response = "Estás en el resultado de la pregunta con id %s."

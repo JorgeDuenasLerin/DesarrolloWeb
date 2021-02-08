@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      table, tr, td {
+        border: 1px solid black;
+      }
+      table {
+        border-collapse: collapse;
+      }
+
+      thead {
+        color: white;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{{ pregunta.question_text }}</h1>
+    <table>
+      <thead>
+        <tr>
+          <td>Opción</td>
+          <td>Nº votos</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for op in pregunta.choice_set.all %}
+        <tr>
+          <td>{{ op.choice_text }}</td>
+          <td>{{ op.votes }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

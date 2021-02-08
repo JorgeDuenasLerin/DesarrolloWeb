@@ -1,8 +1,20 @@
+import datetime
+
 from django.db import models
+from django.utils import timezone
+
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
+
+    def escribete_en_consola(self):
+        print("********* CONSOLA *********")
+        print(self.question_text)
+        print(self.pub_date)
+
+    def ha_sido_publicada_hacepoco(self):
+        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
     def __str__(self):
         return self.question_text
