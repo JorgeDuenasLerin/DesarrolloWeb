@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.http import Http404
 # Create your views here.
 from django.http import HttpResponse
 from .models import Question, Youtuber
@@ -24,7 +24,10 @@ def listado_youtubers(request):
 
 def detail(request, question_id):
     # Obterner la pregunta con id question_id a través de los modelos
-    dondeGuardarElObjeto = Question.objects.get(pk=question_id)
+    try:
+        dondeGuardarElObjeto = Question.objects.get(pk=question_id)
+    except Question.DoesNotExist:
+        raise Http404("Lo que buscas no está")
     # Generar un contexto
     # generar un polls/detail.html
     # return -> return render
