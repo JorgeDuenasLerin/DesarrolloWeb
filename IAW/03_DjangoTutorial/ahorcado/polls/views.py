@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.http import Http404
 # Create your views here.
-from django.http import HttpResponse
-from .models import Question, Youtuber
-
+from django.http import HttpResponse, HttpResponseRedirect
+from .models import Question, Youtuber, Choice
+from django.urls import reverse
 
 def index(request):
     latest_question_list = Question.objects.all()
@@ -42,4 +42,21 @@ def results(request, question_id):
     return HttpResponse(response % question_id)
 
 def vote(request, question_id):
-    return HttpResponse("Votación para " + str(question_id))
+    try:
+        pregunta = Question.objects.get(pk=question_id)
+    except Question.DoesNotExist:
+        raise Http404("Lo que buscas no está")
+
+    ## ¿Me han enviado una opción?
+    if not 'choice' in request.POST:
+        context = {
+            'error': "Elije una opción",
+            'pregunta': pregunta
+        }
+        return render(request, 'polls/detalle.html', context)
+
+    # Tengo la pregunta y tengo la opción:
+    opcion = Choice.objects.get(pk=request.POST['choice'])
+    opcion.votes += 1
+    opcion.save()
+    return HttpResponseRedirect(reverse('detail', args=(pregunta.id,)))
