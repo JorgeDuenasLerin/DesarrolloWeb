@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <body>
+    <h1>Mi primer JS</h1>
+
+    <form>
+      <input type="text" name="" value="" id="nombre">
+      <input type="button" name="" value="Enviar" id="boton">
+    </form>
+
+    <div class="" id="principal">
+      Esto es mi contenido
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    var cajaTexto = document.getElementById('nombre')
+    var boton = document.getElementById('boton')
+
+    boton.addEventListener("click", function(){
+      alert("Pulsado")
+      console.log(cajaTexto.value)
+    })
+
+    /*
+    var nombre = prompt("¿Cómo te llamas?")
+    var miDiv = document.getElementById('principal')
+
+    if(nombre != null) {
+      miDiv.innerText = 'Bienvenido! mister ' + nombre
+    } else {
+      miDiv.innerText = 'Bienvenido! señor anńimo'
+    }
+    */
+
+
+  </script>
+</html>

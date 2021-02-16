@@ -1,4 +1,5 @@
 from django.urls import path
+from django.views.generic.base import TemplateView
 
 from . import views
 
@@ -12,4 +13,7 @@ urlpatterns = [
     path('<int:question_id>/resultados/', views.results, name='results'),
     # ex: /polls/5/vote/
     path('<int:question_id>/votar/', views.vote, name='vote'),
+
+
+    path('primerjs/', TemplateView.as_view(template_name='polls/js1.html')),
 ]
