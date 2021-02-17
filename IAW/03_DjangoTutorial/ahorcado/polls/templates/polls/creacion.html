@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta http-equiv="refresh" content="30">
+  </head>
+  <body>
+    <div class="" id="contenedor">
+
+    </div>
+  </body>
+  <script type="text/javascript">
+    var contenedor = document.getElementById('contenedor')
+
+
+    for(i=0;i<3000;i++){
+      var dateSpan = document.createElement('span')
+      dateSpan.innerHTML = "Hola mundo"
+      dateSpan.style.background = "#" + i;
+      contenedor.append(dateSpan)
+    }
+  </script>
+</html>

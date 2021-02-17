@@ -20,11 +20,16 @@
 
   <script type="text/javascript">
     var cajaTexto = document.getElementById('nombre')
+
     var boton = document.getElementById('boton')
 
     boton.addEventListener("click", function(){
-      alert("Pulsado")
-      console.log(cajaTexto.value)
+      if(cajaTexto.value == ""){
+        alert("Bienvenido anónimo")
+      } else {
+        alert("Bienvenido " + cajaTexto.value)
+      }
+        //console.log(cajaTexto.value)
     })
 
     /*
