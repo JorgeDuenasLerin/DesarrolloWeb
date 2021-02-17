@@ -25,13 +25,14 @@ SECRET_KEY = '4(na!dx-blb6$ro0fo#^l!kqsb!m50k-y0i)ae@^)$0!@%@fq@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['172.26.110.100']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
+    'incidencias.apps.IncidenciasConfig',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
