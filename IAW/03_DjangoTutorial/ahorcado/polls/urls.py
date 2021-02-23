@@ -18,4 +18,5 @@ urlpatterns = [
     path('primerjs/', TemplateView.as_view(template_name='polls/js1.html')),
     path('calculadora/', TemplateView.as_view(template_name='polls/calculadora.html')),
     path('creacion/', TemplateView.as_view(template_name='polls/creacion.html')),
+    path('todoist/', TemplateView.as_view(template_name='polls/todoist.html')),
 ]
