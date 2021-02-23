@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <meta http-equiv="refresh" content="30">
+    <meta http-equiv="refresh" content="0">
   </head>
   <body>
     <div class="" id="contenedor">
@@ -17,7 +17,7 @@
     for(i=0;i<3000;i++){
       var dateSpan = document.createElement('span')
       dateSpan.innerHTML = "Hola mundo"
-      dateSpan.style.background = "#" + i;
+      dateSpan.style.background = "#" + ((1<<24)*Math.random() | 0).toString(16);
       contenedor.append(dateSpan)
     }
   </script>

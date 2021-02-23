@@ -6,15 +6,49 @@
   </head>
   <body>
     <form>
-      Op1 <input type="text" name="" value=""><br>
-      Op2 <input type="text" name="" value=""><br>
-      <button type="button" name="button">+</button>
-      <button type="button" name="button">-</button>
-      <button type="button" name="button">*</button>
-      <button type="button" name="button">/</button>
-      <div class="">
+      Op1 <input type="text" name="" value="" id="inputUno"><br>
+      Op2 <input type="text" name="" value="" id="inputDos"><br>
+      <button type="button" name="button" id="botonSuma">+</button>
+      <button type="button" name="button" id="botonResta">-</button>
+      <button type="button" name="button" id="botonMulti">*</button>
+      <button type="button" name="button" id="botonDiv">/</button>
+      <div class="" id="resultado">
         bienvenido a la calculadora 30000
       </div>
     </form>
   </body>
+  <script type="text/javascript">
+    var inputUno = document.getElementById("inputUno")
+    var inputDos = document.getElementById("inputDos")
+    var resultado = document.getElementById("resultado")
+
+    var botonSuma = document.getElementById("botonSuma")
+    botonSuma.addEventListener("click", function () {
+      var op1 = parseInt(inputUno.value)
+      var op2 = parseInt(inputDos.value)
+      resultado.innerHTML = op1 + op2
+    })
+
+    var botonResta = document.getElementById("botonResta")
+    botonResta.addEventListener("click", function () {
+      var op1 = parseInt(inputUno.value)
+      var op2 = parseInt(inputDos.value)
+      resultado.innerHTML = op1 - op2
+    })
+
+    var botonMulti = document.getElementById("botonMulti")
+    botonMulti.addEventListener("click", function () {
+      var op1 = parseInt(inputUno.value)
+      var op2 = parseInt(inputDos.value)
+      resultado.innerHTML = op1 * op2
+    })
+
+    var botonDiv = document.getElementById("botonDiv")
+    botonDiv.addEventListener("click", function () {
+      var op1 = parseInt(inputUno.value)
+      var op2 = parseInt(inputDos.value)
+      resultado.innerHTML = op1 / op2
+    })
+
+  </script>
 </html>
