@@ -25,5 +25,37 @@
         "serie": "221",
         "premio": "100"
     }
-  ]
+  ],
+  "book":[
+      {
+         "id":"444",
+         "language":"C",
+         "edition":"First",
+         "author":"Dennis Ritchie "
+      },
+      {
+         "id":"555",
+         "language":"C++",
+         "edition":"second",
+         "author":"Bjarne Stroustrup "
+      },
+      {
+         "id":"666",
+         "language":"Java 8",
+         "edition":"first",
+         "author":"Paquita Salas"
+      },
+      {
+         "id":"777",
+         "language":"Koltin",
+         "edition":"second",
+         "author":"Juan Agogó"
+      },
+      {
+         "id":"888",
+         "language":"C#",
+         "edition":"second",
+         "author":"Varios autores"
+      }
+   ]
 }
